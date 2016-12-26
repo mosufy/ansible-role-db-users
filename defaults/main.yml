@@ -1,0 +1,12 @@
+---
+mysql_root_password: "CCPQGcSV"
+
+db_database: dbname
+db_username: dbusername
+db_password: dBP@ssw0rd
+
+#
+# Set users to grant access to database
+#
+db_grant_users:
+  - { database: "{{ db_database }}", username: "{{ db_username }}", host: localhost, password: "{{ db_password }}" }

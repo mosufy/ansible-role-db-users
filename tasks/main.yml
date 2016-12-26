@@ -1,0 +1,5 @@
+---
+- name: Grant users access to database
+  command: mysql -uroot -p{{ mysql_root_password }} --execute="GRANT ALL PRIVILEGES ON {{ item.database }}.* TO '{{ item.username }}'@'{{ item.host }}' IDENTIFIED BY '{{ item.password }}' WITH GRANT OPTION;"
+  with_items: "{{ db_grant_users }}"
+  notify: flush privileges

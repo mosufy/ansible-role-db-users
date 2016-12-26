@@ -1,0 +1,3 @@
+---
+- name: flush privileges
+  command: mysql -uroot -p{{ mysql_root_password }} --execute="FLUSH PRIVILEGES"
